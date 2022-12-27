@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  item-app:
+    image: ghcr.io/fajar-islami/dicoding-proyek-pertama:v1
+    ports:
+      - 80:8080
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      NODE_ENV: production 
+      DB_HOST: item-db
+    depends_on:
+      - item-db
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+  item-db:
+    image: mongo:3
+    volumes:
+      - app-db:/data/db
+    ports:
+      - 27017:27017
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+volumes:
+  app-db:

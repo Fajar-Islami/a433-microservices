@@ -1,0 +1,195 @@
+ 1039  docker compose up
+ 1040  docker --version
+ 1140  docker images
+ 1141  docker rmi  6ed0474c8e27  53e55a9f95b6  73cffdba769f
+ 1142  docker ps -
+ 1143  docker ps -a
+ 1144  docker pull python:3.12-rc
+ 1145  docker ps
+ 1146  docker ps -a
+ 1147  docker rm 25051b64d286
+ 1148  docker rmi  6ed0474c8e27  53e55a9f95b6  73cffdba769f
+ 1153  docker images
+ 1156  docker images
+ 1157  docker rmi 14f6062fc0d1
+ 1159  docker ps
+ 1160  docker images
+ 1161  docker rmi 01be8e0fb7ac 06af64d5d27e
+ 1163  docker images
+ 1166  docker ps
+ 1168  docker ps
+ 1169  docker ps -a
+ 1170  docker logs -f  e669ca184433
+ 1171  docker start e669ca184433
+ 1172  docker logs -f  e669ca184433
+ 1173  docker ps
+ 1174  docker stop e669ca184433
+ 1175  docker enter2
+ 1177  docker ps -a
+ 1181  docker network ls
+ 1182  docker ps
+ 1183  docker network ls
+ 1184  docker network prune
+ 1447  docker network inspect bridge
+ 1448  docker ps
+ 1449  docker network ls
+ 1524  docker images | grep post
+ 1525  docker images
+ 1526  docker images | grep my
+ 1527  docker compose up -d
+ 1528  docker images
+ 1529  docker images | grep redis
+ 1530  docker compose up -d
+ 1532  docker ps
+ 1534  docker compose down -v
+ 1615  cd docker/volumes
+ 1616  sudo cd docker/volumes
+ 1617  sudo cd docker\
+ 1618  l | grep docker
+ 1619  cd docker
+ 1620  sudo cd docker
+ 1622  docker volume inspect my-volume 
+ 1623  docker images | grep nginx
+ 1624  docker images
+ 1625  docker run -d --name docker-volume -v my-volume:/app nginx:1.23.3
+ 1626  docker inspect docker-volume 
+ 1627  docker inspect docker-volume  | grep source
+ 1628  docker container stop docker-volume && docker container rm docker-volume && docker volume rm my-volume
+ 1629  docker run -d -it --name docker-bindmount --mount type=bind,source="$(pwd)"/target,target=/app nginx:1.23.3
+ 1630  docker inspect docker-bindmount 
+ 1631  docker run -d -it --name docker-tmpfs --tmpfs /app nginx:1.23.3
+ 1632  docker ps
+ 1633  docker inspect docker-tmpfs 
+ 1634  docker stop docker-tmpfs 
+ 1635  docker start docker-tmpfs 
+ 1636  docker exec -it docker-tmpfs bash
+ 1637  docker container stop docker-tmpfs && docker container rm docker-tmpfs && docker image rm nginx:latest 
+ 1640  docker build -t todo-app:v1 .
+ 1641  docker rm -f todo-app
+ 1642  docker run -dp 3000:3000 --name todo-app todo-app:v2
+ 1643  docker run -dp 3000:3000 --name todo-app todo-app:v1
+ 1644  docker volume create todo-db
+ 1645  docker rm -f todo-app
+ 1646  docker network create todo-app
+ 1647  docker network ls
+ 1648  docker run -d      --name mysql-db      --network todo-app --network-alias mysql      -v todo-mysql-data:/var/lib/mysql      -e MYSQL_ROOT_PASSWORD=dicoding      -e MYSQL_DATABASE=todo-db      mysql:8.0.30
+ 1649  docker exec -it mysql-db mysql -u root -p
+ 1650  docker rm -f todo-app
+ 1651  docker run -dp 3000:3000 --name todo-app    -w /app -v "$(pwd):/app"     --network todo-app     -e MYSQL_HOST=mysql     -e MYSQL_USER=root     -e MYSQL_PASSWORD=dicoding     -e MYSQL_DB=todo-db     node:12-alpine     sh -c "yarn install && yarn run dev"
+ 1652  docker logs todo-app
+ 1653  docker compose version
+ 1654  docker rm -f todo-app mysql-db     && docker volume rm todo-db todo-mysql-data     && docker network rm todo-app \
+ 1683  docker volume create my-volume
+ 1684  docker volume ls
+ 1685  docker pull nginx:1.23.3
+ 1686  docker images | grep node
+ 1687  docker images 
+ 1690  docker run -dp 3000:3000 --name todo-app -v todo-db:/etc/todos todo-app:v1
+ 1691  docker volume ls
+ 1692  docker images | grep mys
+ 1693  docker ps
+ 1694  docker logs todo-app
+ 1695  docker images
+ 1696  docker images | grep node
+ 1697  docker images | grep my
+ 1707  docker run -d -p 5000:5000 --restart=always --name registry registry:2
+ 1708  docker images | grep nginx
+ 1709  docker run -d --name my-nginx -p 80:80 nginx:1.23.3
+ 1710  docker ps
+ 1711  docker ps =a
+ 1712  docker ps -a
+ 1713  docker images
+ 1714  docker tag nginx-hello-world localhost:5000/nginx-hello-world
+ 1715  docker images
+ 1717  docker images
+ 1718  docker tag localhost:5000/nginx-hello-world:latest ahmadfajarislami/nginx-hello-world:v1
+ 1719  docker images
+ 1720  docker push ahmadfajarislami/nginx-hello-world:v1
+ 1721  docker login
+ 1722  docker push ahmadfajarislami/nginx-hello-world:v1
+ 1723  docker stop my-nginx && docker container rm my-nginx && docker image rm fikrihelmi17/nginx-hello-world:v1
+ 1724  docker ps
+ 1725  docker ps -a
+ 1727  docker images | grep ngi
+ 1861  docker images
+ 1865  docker builder prune
+ 1867  docker images
+ 1868  docker push ghcr.io/Fajar-Islami/dicoding-proyek-pertama:v1 .
+ 1869  docker push ghcr.io/Fajar-Islami/dicoding-proyek-pertama:v1
+ 1876  docker imagrs
+ 1877  docker images
+ 1878  docker rmi  d326bf8613fe e11663efbb6c
+ 1879  docker rmi  -f d326bf8613fe e11663efbb6c
+ 1880  docker rmi -f  4ab620757dea 61f1f7871a51  61f1f7871a51 61f1f7871a51
+ 1881  docker ps -a
+ 1882  docker rm -f  6c28c59b078f 19fb72ff885e 401eab9ec910  d97465aaba8d  d3e2ed206049 fbf4c6e777ea 
+ 1883  docker ps -a
+ 1884  docker rm -f 89b276bd2f5b  2cecc54884ad  ee5499319f71
+ 1885  docker ps -a
+ 1888  docker images
+ 1889  docker ps
+ 1890  docker ps -a
+ 1891  docker logs -f <pre>8d7231db39d5</pre>
+ 1894  docker images
+ 1895  docker rmi 7bb24fc3fb8b  19c106ecd867
+ 1897  docker images
+ 1898  docker image prune --filter label=stage=builder
+ 1900  docker images
+ 1902  docker images
+ 1904  docker images
+ 1905  y | docker image prune --filter label=stage=builder
+ 1906  docker image prune --filter label=stage=builder
+ 1907  docker rmi dicoding-proyek-pertama:v1 .
+ 1913  docker images | grep alp
+ 1914  docker images
+ 1915  docker images -a
+ 1916  docker images -f "dangling=true"
+ 1917  docker version
+ 1918  docker images | grep alpine
+ 1920  docker images
+ 1921  docker rmi 74173f02edb2
+ 1922  docker ps
+ 1923  docker ps -a
+ 1924  docker rm -f bddd8d2c4159
+ 1925  docker rmi 74173f02edb2
+ 1926  docker ps -a
+ 1927  docker rm -f b7e47b472959
+ 1928  docker rm -f bddd8d2c4159
+ 1929  docker rmi 74173f02edb2
+ 1930  docker images
+ 1936  docker images
+ 1943  docker image prune --filter label=stage=builder
+ 1947  docker images
+ 1948  docker ps -a
+ 1949  docker run -d --name dicoding-proyek-pertama -p 8080:8080 dicoding-proyek-pertama:v1
+ 1950  docker ps
+ 1951  docker ps -a
+ 1953  docker compose up -d
+ 1955  docker run -d --name dicoding-proyek-pertama -p 8080:8080 dicoding-proyek-pertama:v1
+ 1956  docker ps
+ 1958  docker rm -f dicoding-proyek-pertama
+ 1960  docker ps
+ 1963  docker rm -f dicoding-proyek-pertama
+ 1964  docker images
+ 1965  docker ps
+ 1966  docker ps -a
+ 1967  docker compose down -v
+ 1968  docker images
+ 1969  docker ps -a
+ 1970  docker rm -f 900c3df89563
+ 1978  docker ps
+ 1979  docker compose down -v
+ 1980  docker compose up -d
+ 1983  docker ps -a
+ 1996  docker images
+ 1997  docker rmi 6a0a7e613cc1  882be0a68fe8 54750b703fcf  4fad019ef6f8  4bf332d50001 4894ac47b333
+ 1999  docker images
+ 2004  docker
+ 2008  docker images
+ 2009  docker rmi 3a3909a81c24  e466f730dcce  e08f57acb536
+ 2010  docker images
+ 2011  docker rmi 3e92183bb3aa
+ 2015  docker compose up[
+ 2016  docker compose up
+ 2018  history | grep docker
+ 2019  history | grep docker > log.txt
