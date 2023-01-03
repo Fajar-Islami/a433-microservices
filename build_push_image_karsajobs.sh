@@ -3,7 +3,7 @@
 
 ## Step 1: build image
 echo "BUILD DOCKER IMAGE \n"
-docker build -t ghcr.io/fajar-islami/karsajobs:latest
+make dockerbuild
 
 # Step 2 : showing all docker images
 echo 'SHOWING ALL DOCKER IMAGES \n'
