@@ -4,10 +4,8 @@ image:=karsajobs
 tags:=latest
 
 dockerlogin:
-	printenv
-	echo $GITHUB_TOKEN
-	export GITHUB_TOKEN=${GITHUB_TOKEN}
-	echo ${GITHUB_TOKEN} | docker login ${registry}
+	export CR_PAT=${CR_PAT}
+	echo ${CR_PAT} | docker login ${registry} -u ${USERNAME} --password-stdin
 
 dockerpush:
 	docker push ${registry}/${username}/${image}:${tags}
