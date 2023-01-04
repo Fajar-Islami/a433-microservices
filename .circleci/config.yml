@@ -21,10 +21,10 @@ jobs:
             name: Run tests
             command: go test -v -short --count=1 $(go list ./...)
   build-and-push:
-      docker: []
+      executor: docker/docker 
       steps:
-      - checkout
-      - run:
+        - checkout
+        - run:
             name: Build and push image
             command: bash build_push_image_karsajobs.sh
 
