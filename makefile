@@ -4,8 +4,8 @@ image:=karsajobs
 tags:=latest
 
 dockerlogin:
-	export CR_PAT=${CR_PAT}
-	echo $CR_PAT | docker login ${registry}
+	export GITHUB_TOKEN=${GITHUB_TOKEN}
+	echo ${GITHUB_TOKEN} | docker login ${registry}
 
 dockerpush:
 	docker push ${registry}/${username}/${image}:${tags}
