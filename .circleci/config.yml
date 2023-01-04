@@ -22,7 +22,7 @@ jobs:
         - setup_remote_docker #setup remote Docker engine to using docker command 
         - run:
             name: Build and push image
-            command: bash build_push_image_karsajobs.sh
+            command: bash build_push_image_karsajobs_ui.sh
 
 workflows:
   push-image:
