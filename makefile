@@ -1,5 +1,3 @@
-include .env
-
 registry:=ghcr.io
 username:=fajar-islami
 image:=karsajobs
