@@ -4,6 +4,7 @@ image:=karsajobs
 tags:=latest
 
 dockerlogin:
+	printenv
 	export GITHUB_TOKEN=${GITHUB_TOKEN}
 	echo ${GITHUB_TOKEN} | docker login ${registry}
 
