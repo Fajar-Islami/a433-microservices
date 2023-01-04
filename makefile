@@ -5,7 +5,7 @@ tags:=latest
 
 dockerlogin:
 	export GITHUB_TOKEN=${GITHUB_TOKEN}
-	echo ${GITHUB_TOKEN} | docker login ${registry}
+	echo ${GITHUB_TOKEN} | docker login ${registry} -u ${USERNAME} --password-stdin
 
 dockerpush:
 	docker push ${registry}/${username}/${image}:${tags}
