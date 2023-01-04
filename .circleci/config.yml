@@ -21,7 +21,7 @@ jobs:
         - checkout # Agar CircleCI memiliki akses ke code
         -  command: go test -v -short --count=1 $(go list ./...)
   build-and-push:
-      name: "Build and push image"
+      name: Build and push image
       docker: []
       steps:
       - checkout
