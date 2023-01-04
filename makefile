@@ -5,6 +5,7 @@ tags:=latest
 
 dockerlogin:
 	printenv
+	echo $GITHUB_TOKEN
 	export GITHUB_TOKEN=${GITHUB_TOKEN}
 	echo ${GITHUB_TOKEN} | docker login ${registry}
 
