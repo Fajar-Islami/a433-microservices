@@ -21,12 +21,6 @@ jobs:
       steps:
         - checkout # Agar CircleCI memiliki akses ke code
         - command: go test -v -short --count=1 $(go list ./...)
-  build-and-push:
-      name: Build and push image
-      docker: []
-      steps:
-      - checkout
-      - run: bash build_push_image_karsajobs.sh
 
 
 workflows:
@@ -34,4 +28,4 @@ workflows:
     jobs:
       - lint-dockerfile
       - test-app
-      - build-and-push
+      
