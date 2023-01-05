@@ -22,7 +22,7 @@ metadata:
   name: mongo-pv-claim
   namespace: karsajobs-ns
   labels:
-    type: mongo
+    app: mongo
 spec:
   storageClassName: manual
   accessModes:

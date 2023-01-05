@@ -11,7 +11,6 @@ spec:
       app: mongo
       tier: backend
   serviceName: mongo
-  replicas: 2
   minReadySeconds: 10
   template:
     metadata:
@@ -42,3 +41,12 @@ spec:
       - name: mongo-persistent-storage
         persistentVolumeClaim:
           claimName: mongo-pv-claim
+      - name: mongo-configmap
+        configMap:
+          name: mongo-configmap
+          items: 
+            - key: mongo.conf
+              path: mongo.conf
+      - name: mongo-secret
+        secret:
+          secretName: mongo-secret
