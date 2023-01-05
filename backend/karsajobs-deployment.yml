@@ -20,7 +20,7 @@ spec:
       containers:
       - name: backend-karsajobs
         image: ghcr.io/fajar-islami/karsajobs:latest # image backend golang
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: IfNotPresent # agar tidak download ulang iamge
         ports:
           - containerPort: 8080
         env:

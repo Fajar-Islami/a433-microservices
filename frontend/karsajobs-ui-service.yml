@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-tier
+  namespace: karsajobs-ns
+  labels:
+    app: frontend-karsajobs
+spec:
+  ports:
+  - port: 8000
+  selector:
+    tier: frontend

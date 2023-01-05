@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-tier
+  labels:
+    app: microservices
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend-karsajobs
+        tier: frontend
+    spec:
+        containers:
+        - name: frontend-karsajobs
+          image: ghcr.io/fajar-islami/karsajobs-ui:latest
+          imagePullPolicy: IfNotPresent # agar tidak download ulang iamge
+          env:
+            - name: VUE_APP_BACKEND
+              value: http://192.168.49.2:8080 #http://<NODE_IP>:<NODE_PORT>
+ 

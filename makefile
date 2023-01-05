@@ -7,6 +7,16 @@ kube-delete-mongo:
 kube-backend:
 	kubectl apply -f backend -n karsajobs-ns
 
+kube-delete-backend:
+	kubectl delete -f backend -n karsajobs-ns
+
+kube-frontend:
+	kubectl apply -f frontend -n karsajobs-ns
+
+kube-delete-frontend:
+	kubectl delete -f frontend -n karsajobs-ns
+
+
 
 kube-get:
 	kubectl get statefulset,service,po,pv,pvc -n karsajobs-ns
