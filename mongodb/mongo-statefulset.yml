@@ -11,6 +11,7 @@ spec:
       app: mongo
       tier: backend
   serviceName: mongo
+  replicas: 1
   minReadySeconds: 10
   template:
     metadata:
@@ -22,6 +23,7 @@ spec:
       containers:
       - image: mongo:3
         name: mongo
+        imagePullPolicy: IfNotPresent
         env:
         - name: MONGO_INITDB_ROOT_USERNAME_FILE
           value: /etc/mongo-credentials/MONGO_ROOT_USERNAME
