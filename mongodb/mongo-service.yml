@@ -9,6 +9,7 @@ metadata:
 spec:
   ports:
     - port: 27017
+      name: mongo
   selector:
     app: mongo
     tier: backend
